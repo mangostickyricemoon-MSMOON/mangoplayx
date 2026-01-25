@@ -1,0 +1,245 @@
+/* โครงสร้างหลัก */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: system-ui, Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 180, 255, 0.4),
+              0 6px 20px rgba(120, 0, 255, 0.3);
+}
+
+/* โลโก้ด้านบน */
+.header-top {
+  height: 80px;
+  background: linear-gradient(90deg, #ff7a00, #ffb300, #ffd800, #b6ff00, #38a700);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Header Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto; /* ดันไปด้านขวา */
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-box input {
+  padding: 6px 8px;
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  background: #38a700;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.search-btn:hover {
+  background: #38a700;
+}
+
+/* Hamburger button */
+.hamburger-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  padding: 6px 10px;
+}
+
+/* Dropdown menu (ซ่อนค่าเริ่มต้น) */
+.dropdown-menu {
+  display: none;              /* ✅ ซ่อนเสมอ */
+  position: absolute;
+  right: 12px;
+  top: 100%;                  /* อยู่ใต้ header */
+  background: rgba(128, 128, 128, 0.8); /* ✅ เทาโปร่งแสง */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* ✅ เส้นขอบโปร่ง */
+  border-radius: 4px;
+  flex-direction: column;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  backdrop-filter: blur(4px); /* ✅ ทำให้โปร่งใสสวยขึ้น */
+}
+
+
+.dropdown-menu a {
+  padding: 10px;
+  color: #121826;
+  font-size: clamp(1.0rem, 2vw, 1rem);
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #f0f0f0;
+}
+
+/* เมื่อกด hamburger toggle class show */
+.dropdown-menu.show {
+  display: flex;              /* ✅ โชว์เฉพาะตอนมี class show */
+}
+
+
+
+/* Hero Section */
+.hero {
+  padding: 140px 20px 40px; /* เผื่อ header fixed */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* รูป banner อยู่กลาง */
+}
+
+.hero-banner {
+  margin-top: 1.5rem;
+  width: 100vw;              /* ✅ เต็มความกว้างหน้าจอ */
+  height: auto;
+  border-radius: 0;          /* ✅ เอาโค้งออก ถ้าอยากเต็มจอจริง */
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+  display: block;
+}
+
+
+/* ข้อความ Hero */
+.hero-text {
+  max-width: 600px;   /* ✅ ไม่กว้างเกิน banner */
+  width: 100%;
+  text-align: left;   /* ✅ ชิดซ้าย */
+  margin-top: 1.5rem;
+  word-wrap: break-word;   /* ✅ บังคับตัดคำถ้ายาวเกิน */
+  overflow-wrap: break-word; /* ✅ รองรับ browser ใหม่ */
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  max-width: 100%;        /* ✅ ไม่เกินกรอบ hero-text */
+  white-space: normal;    /* ✅ ให้ขึ้นบรรทัดใหม่อัตโนมัติ */
+}
+
+/* PlayX Section */
+.play {
+  display: flex;
+  justify-content: center;   /* จัดรูปให้อยู่กลางแนวนอน */
+  align-items: center;       /* จัดกลางแนวตั้ง (ถ้ามีความสูง) */
+  padding: 2rem 1rem;        /* ระยะห่างรอบ ๆ */
+}
+
+.play-playx {
+  margin-top: 1.5rem;
+  width: 100vw;              /* ✅ เต็มความกว้างหน้าจอ */
+  height: auto;
+  border-radius: 0;          /* ✅ เอาโค้งออก ถ้าอยากเต็มจอจริง */
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+  display: block;
+}
+
+
+/* Sections */
+.section {
+  padding: 2rem 1rem;
+  text-align: center;   /* ✅ จัดเนื้อหาภายใน section ให้อยู่กึ่งกลาง */
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+  text-align: left;   /* ✅ จัดหัวข้อให้อยู่กึ่งกลาง */
+  color: #ffd800;
+}
+
+.section-faq h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+  text-align: left;   /* ✅ จัดหัวข้อให้อยู่กึ่งกลาง */
+  color: #38a700;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Footer */
+.site-footer {
+  background-color: #121826;
+  padding: 1.5rem;
+  text-align: center;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+

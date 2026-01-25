@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- viewport สำหรับ responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MangoPlayX</title>
+    <!-- base CSS -->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: system-ui, Arial, sans-serif;
+        background-color: #0a0a0a;
+        color: #fff;
+      }
+      #root {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- React จะ mount ที่นี่ -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

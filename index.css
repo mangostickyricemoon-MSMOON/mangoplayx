@@ -1,0 +1,26 @@
+/* ใช้ขนาดแบบยืดหยุ่น */
+.container {
+  width: 100%;
+  max-width: 1200px; /* desktop */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ปรับ layout ตามหน้าจอ */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.25rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+}
